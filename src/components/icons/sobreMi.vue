@@ -1,0 +1,335 @@
+<template>
+  <section id="sobre-mi" class="sobremi">
+    <div class="container">
+      <div container class="categoria border-bottom">
+        <div class="categoria_icono">
+          <i class="fa-sharp fa-solid fa-address-card"></i>
+          <h2 class="title">Sobre mí</h2>
+        </div>
+      </div>
+      <article class="container-sobremi" id="container-sobremi">
+        <div class="tarjeta-sobremi">
+          <div class="foto-perfil">
+            <img src="/src/assets/images/perfil.jpg" alt="" srcset="" />
+          </div>
+          <div class="sobremi-contenido">
+            <div class="misdatos">
+              <h3>Hola! Soy Dario Scilipoti</h3>
+              <h4>
+                <span id="typedMessage" class="typed">{{ typed }}</span>
+              </h4>
+              <h5>
+                Estudiante de la Tecnicatura Universitaria en Programación
+                a distancia en la UTN Regional San Rafael.
+              </h5>
+            </div>
+            <div class="redes-sobremi">
+              <div class="icon">
+                <a href="https://www.instagram.com/darioscili/" target="_blank"><i class="bx bxl-instagram"></i></a>
+              </div>
+              <div class="icon">
+                <a href="https://www.facebook.com/darioscili/" target="_blank"><i
+                    class="bx bxl-facebook-circle"></i></a>
+              </div>
+              <div class="icon">
+                <a href="https://wa.me/542622660229/" target="_blank">
+                  <i class="bx bxl-whatsapp"></i></a>
+              </div>
+              <div class="icon">
+                <a href="https://x.com/darosc" target="_blank">
+                  <i class="bx bxl-twitter"></i></a>
+              </div>
+              <div class="icon">
+                <a href="https://www.linkedin.com/in/dario-scilipoti-279121254/" target="_blank">
+                  <i class="bx bxl-linkedin"></i></a>
+              </div>
+              <div class="icon">
+                <a href="https://github.com/dariosci/" target="_blank">
+                  <i class="bx bxl-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</template>
+
+<script setup>
+
+
+</script>
+
+<script>
+import Typed from 'typed.js';
+
+export default {
+  data() {
+    return {
+      typed: ''
+    };
+  },
+  mounted() {
+    this.typed = new Typed('#typedMessage', {
+      strings: [
+        "Desarrollador FullStack",
+        "Programador",
+        "Servicio Técnico",
+        "Administrador de Red",
+        "Analista",
+      ],
+      typeSpeed: 50,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true,
+    });
+  }
+}
+</script>
+
+<style scoped>
+.sobremi {
+  display: flex;
+  justify-content: center;
+  /* esto centra el elemento */
+  padding: 2rem;
+}
+
+.container-sobremi {
+  display: flex;
+  width: 100%;
+  padding: 2rem;
+  line-height: 2.5rem;
+  font-size: large;
+  flex-direction: column;
+}
+
+/* .foto-img {
+  size: 5rem;
+  float: center;
+  border-radius: 50%;
+  object-position: center top;
+  border-color: #020202;
+  border-style: solid;
+} */
+
+/* Estilos generales para las tarjetas Sobre mi */
+.tarjeta-sobremi {
+  display: flex;
+  /* Habilitamos Flexbox para alinear los elementos internos */
+  align-items: center;
+  /* Centra verticalmente el logo y el contenido */
+  background-color: rgb(189,
+      186,
+      186);
+  /* Fondo de la tarjeta, ajusta a tu paleta */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra suave para darle profundidad */
+  padding: 20px;
+  /* Espaciado interno */
+  margin-bottom: 20px;
+  /* Espacio entre tarjetas */
+  gap: 20px;
+  /* Espacio entre el logo y el contenido (Flexbox gap) */
+}
+
+/* Estilos para el contenedor foto-perfil */
+.foto-perfil {
+  /* Evita que el logo se encoja */
+  flex-shrink: 0;
+  /* Evita que el logo se encoja */
+  width: 20rem;
+  /* Ancho fijo para el contenedor del logo */
+  height: auto;
+  /* Alto fijo para el contenedor del logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-perfil img {
+  max-width: 100%;
+  /* Asegura que la imagen no exceda el ancho de su contenedor */
+  max-height: 100%;
+  /* Asegura que la imagen no exceda el alto de su contenedor */
+  object-fit: contain;
+  /* Ajusta la imagen dentro del contenedor sin recortar */
+  border-radius: 50%;
+  /* Opcional: si el logo tiene bordes cuadrados */
+  border-color: #020202;
+  border-style: solid;
+}
+
+/* Estilos para el contenedor del contenido */
+.sobremi-contenido {
+  flex-grow: 1;
+  /* Permite que el contenido ocupe el espacio restante */
+  text-align: right;
+  /* Alinea el texto a la derecha */
+}
+
+.misdatos {
+  font-size: 1.2em;
+  color: #333;
+  /* Color de texto más oscuro para el cargo */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.multiple-text {
+  font-family: monospace;
+}
+
+.redes-sobremi {
+  justify-content: right;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: row;
+  /* font-size: 0.9em;
+  color: #666; /* Color de texto más tenue para el periodo */
+  /*margin-bottom: 5px; */
+}
+
+.icon {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.25rem;
+  transition: all 0.8s;
+  cursor: pointer;
+}
+
+.icon:hover i {
+  color: white;
+}
+
+.icon:hover {
+  color: white;
+  background-color: #db804b;
+  box-shadow: 0 0 20px #8a5005;
+}
+
+.icon:hover:nth-child(2) {
+  color: white;
+  background-color: #1877f2;
+  box-shadow: 0 0 20px #1877f2;
+}
+
+.icon:hover:nth-child(3) {
+  background-color: #24a005;
+  box-shadow: 0 0 20px #25d366;
+}
+
+.icon:hover:nth-child(4) {
+  background-color: #1da1f2;
+  box-shadow: 0 0 20px #1da1f2;
+}
+
+.icon:hover:nth-child(5) {
+  background-color: #1773ac;
+  box-shadow: 0 0 20px #1da1f2;
+}
+
+.icon:hover:nth-child(6) {
+  background-color: #000000;
+  box-shadow: 0 0 20px #474747;
+}
+
+.icon i {
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+}
+
+svg circle {
+  stroke-dasharray: 150;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon:hover circle {
+  stroke-dasharray: 220;
+}
+
+/* Media Queries agrupadas */
+
+/* Moviles (Pantallas pequeñas, hasta 767px) */
+@media (max-width: 767px) {
+  .container-sobremi {
+    width: 100%;
+    padding: 1;
+    margin-top: 1rem;
+    /* margen a lo alto */
+    line-height: 2.5rem;
+    /* espaciado entre los parrafos del texto */
+    font-size: small;
+    flex-direction: column;
+  }
+
+  .tarjeta-sobremi {
+    flex-direction: column;
+    /* Apila el logo y el contenido en pantallas pequeñas */
+    text-align: center;
+    /* Centra el texto cuando está apilado */
+  }
+
+  .foto-perfil {
+    margin-bottom: 15px;
+    /* Espacio debajo del logo cuando está apilado */
+  }
+
+  .sobremi-contenido {
+    text-align: center;
+    /* Centra el texto cuando está apilado */
+  }
+
+  .redes-sobremi {
+    justify-content: center;
+  }
+
+}
+
+/* Tablets (Pantallas medianas, entre 768px y 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container-sobremi {
+    width: 100%;
+  }
+
+  .tarjeta-sobremi {
+    flex-direction: column;
+    /* Apila el logo y el contenido en pantallas pequeñas */
+    text-align: center;
+    /* Centra el texto cuando está apilado */
+  }
+
+  .foto-perfil {
+    margin-bottom: 15px;
+    /* Espacio debajo del logo cuando está apilado */
+  }
+
+  .sobremi-contenido {
+    text-align: center;
+    /* Centra el texto cuando está apilado */
+  }
+
+  .redes-sobremi {
+    justify-content: center;
+  }
+}
+
+/* Escritorio (Pantallas anchas, a partir de 1024px) */
+@media (min-width: 1024px) {
+  .container-sobremi {
+    width: 100%;
+  }
+
+  .redes-sobremi {
+    justify-content: right;
+  }
+}
+</style>
